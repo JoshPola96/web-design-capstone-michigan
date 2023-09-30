@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>SmartBert</title>    
-    <meta name="viewport" content="width=device-width, intial-scale=1">
+    <title>SmartBert</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
@@ -89,11 +89,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
-                    <div class="offcanvas-sm offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu"
+                    <div class="offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu"
                         aria-labelledby="sidebarMenuLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="sidebarMenuLabel">SmartBert</h5>
-                        </div>
                         <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-visible ">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
@@ -119,12 +116,13 @@
                     </div>
                 </div>
                 <div id=mainhome class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                    <div class="justify-content-between flex-wrap flex-md-nowrap pt-3 pb-2 mb-3 border-bottom">
+                    <div
+                        class="justify-content-between flex-wrap flex-md-nowrap pt-3 pb-2 mb-3 border-bottom d-none d-md-block">
                         <h1 class="h2">Home</h1>
                     </div>
                     <div class=" row d-flex align-items-center">
                         <div id="carouselExampleIndicators"
-                            class="carousel slide col-sm-12 col-md-6 ms-sm-auto col-lg-6" data-bs-ride="carousel">
+                            class="carousel slide col-sm-12 col-md-6 ms-sm-auto col-lg-6 p-2" data-bs-ride="carousel">
                             <div class="carousel-inner p-0">
                                 <div class="carousel-item active">
                                     <img class="d-block" src="assets/images/carouselimage1.jpg" alt="First slide">
@@ -172,7 +170,7 @@
                         class="border-danger rounded-pill p-lg-2 p-md-1 p-sm-0 shadow bg-secondary-subtle d-flex align-items-center">
                         <h1 class="text-center">Deep Learning Model</h1>
                         <p class="p-5">
-                            This site is intended to the front-end for a trained ML model. It utilizes datasets from Waseem & Hovy's
+                            This site uses a front-end for a trained ML model. It utilizes datasets from Waseem & Hovy's
                             GitHub and Kaggle, which are processed, cleaned, and divided into numerical and textual
                             datasets. Textual data goes through a BERT encoder, serving a CNN model and bi-LSTM
                             classifier. The numerical dataset trains a neural network, and both models are combined at a
@@ -186,7 +184,7 @@
                 </div>
                 <div id=maindashboard class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                     <div
-                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom d-none d-md-block">
                         <h1 class="h2">Dashboard</h1>
                     </div>
                     <div style="background-color: #0000001c">

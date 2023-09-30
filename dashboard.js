@@ -4,11 +4,15 @@ $(document).ready(function () {
     $('#mainhome').hide();
     section = $(this).attr("href");
     $(section).show(1000);
+    $('#sidebarmenudashboard').addClass('active');
+    $('#sidebarmenuhome').removeClass('active');
   })
   $('#sidebarmenuhome').click(function () {
     $('#maindashboard').hide();
     section = $(this).attr("href");
     $(section).show(1000);
+    $('#sidebarmenuhome').addClass('active');
+    $('#sidebarmenudashboard').removeClass('active');
   })
 })
 
