@@ -1,26 +1,33 @@
 $(document).ready(function () {
-  $('#maindashboard').hide();
-  $('#sidebarmenudashboard').click(function () {
-    $('#mainhome').hide();
-    section = $(this).attr("href");
+  const mainDashboard = $('#maindashboard');
+  const sidebarMenuDashboard = $('#sidebarmenudashboard');
+  const mainHome = $('#mainhome');
+  const sidebarMenuHome = $('#sidebarmenuhome');
+
+  mainDashboard.hide();
+
+  sidebarMenuDashboard.click(function () {
+    mainHome.hide();
+    const section = $(this).attr('href');
     $(section).show(1000);
-    $('#sidebarmenudashboard').addClass('active');
-    $('#sidebarmenuhome').removeClass('active');
-  })
-  $('#sidebarmenuhome').click(function () {
-    $('#maindashboard').hide();
-    section = $(this).attr("href");
+    sidebarMenuDashboard.addClass('active');
+    sidebarMenuHome.removeClass('active');
+  });
+
+  sidebarMenuHome.click(function () {
+    mainDashboard.hide();
+    const section = $(this).attr('href');
     $(section).show(1000);
-    $('#sidebarmenuhome').addClass('active');
-    $('#sidebarmenudashboard').removeClass('active');
-  })
-})
+    sidebarMenuHome.addClass('active');
+    sidebarMenuDashboard.removeClass('active');
+  });
+});
 
 const inputField = document.getElementById('inputfield');
 const userinput = document.getElementById('userinput');
-const bertresponsetemplate = document.getElementById('bertresponsetemplate');
-const bertresponsetemplateclone = bertresponsetemplate.cloneNode(true);
-const bertresponse = document.getElementById('bertresponse');
+const bertResponseTemplate = document.getElementById('bertresponsetemplate');
+const bertResponseTemplateClone = bertResponseTemplate.cloneNode(true);
+const bertResponse = document.getElementById('bertresponse');
 
 inputField.addEventListener('keydown', function (e) {
   if (e.keyCode === 13) {
@@ -32,39 +39,40 @@ inputField.addEventListener('keydown', function (e) {
 });
 
 function interact() {
-
   userinput.innerHTML = '';
 
   const input = inputField.value;
-  if (inputField.value !== '') {
+  if (input !== '') {
     inputField.value = '';
-    let message = document.createElement('div');
-    message.innerHTML = `<p>${input}</p>`;
-    userinput.appendChild(message);
+    appendMessage(userinput, input);
 
     const response = generateResponse(input);
-
-    message = document.createElement('div');
-    message.innerHTML = `<p>${response}</p>`;
-    bertresponsetemplateclone.querySelector('p').firstChild.data = message.innerText;
-    bertresponse.appendChild(bertresponsetemplateclone);
-    message.scrollIntoView({ behavior: "smooth" });
-
-  }
-  else {
-    let message = document.createElement('div');
-    message.innerHTML = `<p>Please enter a value</p>`;
-    bertresponsetemplateclone.querySelector('p').firstChild.data = message.innerText;
-    bertresponse.appendChild(bertresponsetemplateclone);
-    message.scrollIntoView({ behavior: "smooth" });
+    appendMessage(bertResponse, response, true);
+  } else {
+    const message = 'Please enter a value';
+    appendMessage(bertResponse, message, true);
   }
 
   function generateResponse(input) {
     const responses = [
-      "You should be burned on a stake in the public!",
-      "Sounds alright, Off you go!"
+      'You should be burned on a stake in the public!',
+      'Sounds alright, Off you go!'
     ];
 
     return responses[Math.floor(Math.random() * responses.length)];
+  }
+
+  function appendMessage(container, content, cloneTemplate = false) {
+    const message = document.createElement('div');
+    message.innerHTML = `<p>${content}</p>`;
+
+    if (cloneTemplate) {
+      bertResponseTemplateClone.querySelector('p').firstChild.data = message.innerText;
+      container.appendChild(bertResponseTemplateClone);
+    } else {
+      container.appendChild(message);
+    }
+
+    message.scrollIntoView({ behavior: 'smooth' });
   }
 }
