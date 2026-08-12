@@ -1,5 +1,7 @@
 # Michigan University(Coursera) - Web Design for Everybody: Capstone Project.
 
+> **Scope** · Capstone for the [Web Design for Everybody](https://www.coursera.org/specializations/web-design) specialization, University of Michigan / Coursera. [Certificate](https://www.coursera.org/account/accomplishments/specialization/certificate/F2JC63D3GSUT)
+
 ## Overview
 
 This project is a basic web application designed as part of the Web Design for Everybody Capstone Project from Michigan University (Coursera). It includes a frontend interface for a Deep Learning project component of an MSc dissertation. The project demonstrates fundamental web design and interaction concepts.
